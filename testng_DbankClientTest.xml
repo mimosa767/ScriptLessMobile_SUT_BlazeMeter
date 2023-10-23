@@ -1,0 +1,63 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Digital Bank Demos" verbose="0" parallel="tests" thread-count="100" group-by-instances="true">
+
+    <parameter name="scriptKey" value="PUBLIC:DBankScriptLess.xml"/>
+    <parameter name="testName" value="DBankScriptlessMobileBlaze"/>
+    <parameter name="jobName" value="DBankScriptlessMobileBlaze"/>
+    <parameter name="jobNumber" value="5"/>
+    <parameter name="appPath" value="PUBLIC:DBank1.ipa"/>
+
+    <test name="iOS device 1" enabled="true">
+        <parameter name="DUT" value="00008030-00160D260280802E"/>
+        <parameter name="networkProfile" value="2g_edge_good"/>
+        <parameter name="backgroundAppList" value="Messages,Calculator,Maps,Calendar,Safari"/>
+        <classes>
+            <class name = "ScriptlessMobilePerformanceTest">
+                <methods>
+                    <include name="DbankClientTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="iOS device 2" enabled="true">
+        <parameter name="DUT" value="A1601DBED4C9E66F3DEC5167D515EA98C79A6F8A"/>
+        <parameter name="networkProfile" value="3g_umts_good"/>
+        <parameter name="backgroundAppList" value="Messages,Calculator,Maps,Calendar,Safari"/>
+        <classes>
+            <class name = "ScriptlessMobilePerformanceTest">
+                <methods>
+                    <include name="DbankClientTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="iOS device 3" enabled="true">
+        <parameter name="DUT" value="00008110-00111C9014F2801E"/>
+        <parameter name="networkProfile" value="4g_lte_good"/>
+        <parameter name="backgroundAppList" value="Messages,Calculator,Maps,Calendar,Safari"/>
+        <classes>
+            <class name = "ScriptlessMobilePerformanceTest">
+                <methods>
+                    <include name="DbankClientTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="iOS device 4" enabled="true">
+        <parameter name="DUT" value="00008101-000404480EE8001E"/>
+        <parameter name="networkProfile" value="4g_lte_average"/>
+        <parameter name="backgroundAppList" value="Messages,Calculator,Maps,Calendar,Safari"/>
+        <classes>
+            <class name = "ScriptlessMobilePerformanceTest">
+                <methods>
+                    <include name="DbankClientTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite> <!-- Suite -->

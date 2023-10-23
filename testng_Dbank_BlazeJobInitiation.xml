@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Initiate Blaze Job" verbose="0" parallel="tests" thread-count="100" group-by-instances="true">
+
+    <parameter name="scriptKey" value="PUBLIC:DBankScriptLess.xml"/>
+    <parameter name="testName" value="DBankScriptlessMobileBlaze"/>
+    <parameter name="jobName" value="DBankScriptlessMobileBlaze"/>
+    <parameter name="jobNumber" value="2"/>
+    <parameter name="appPath" value="PUBLIC:DBank1.ipa"/>
+
+    <test name="Initiate Blaze Job" enabled="true">
+        <classes>
+            <class name = "ScriptlessMobilePerformanceTest">
+                <methods>
+                    <include name="InitiateBlazeTest" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Suite -->

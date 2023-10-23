@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="100" parallel="tests" name="Failed suite [Digital Bank Demos]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="100" parallel="tests" name="iOS device 1(failed)" verbose="0">
+    <parameter name="env.resources" value="src/main/resources/ios"/>
+    <parameter name="driver.capabilities.iOSResign" value="true"/>
+    <parameter name="driver.capabilities.deviceName" value="00008110-0002209A1E33801E"/>
+    <parameter name="driver.capabilities.app" value="PUBLIC:DBank1.ipa"/>
+    <parameter name="driver.capabilities.enableAppiumBehavior" value="true"/>
+    <parameter name="driver.capabilities.bundleId" value="HelloWorld.DBank1"/>
+    <parameter name="driver.name" value="perfectoDriver"/>
+    <parameter name="driver.capabilities.scriptName" value="DigitalBankTest"/>
+    <parameter name="driver.capabilities.driverClass" value="io.appium.java_client.ios.IOSDriver"/>
+    <parameter name="driver.capabilities.networkProfile" value="2g_edge_good"/>
+    <classes>
+      <class name="ScriptlessMobilePerformanceTest">
+        <methods>
+          <include name="mainTest"/>
+        </methods>
+      </class> <!-- ScriptlessMobilePerformanceTest -->
+    </classes>
+  </test> <!-- iOS device 1(failed) -->
+</suite> <!-- Failed suite [Digital Bank Demos] -->
